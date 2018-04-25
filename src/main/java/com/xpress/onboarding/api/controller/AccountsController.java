@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.xpress.onboarding.api.domain.Accounts;
 import com.xpress.onboarding.api.exceptions.CustomErrorType;
-import com.xpress.onboarding.api.services.AccountService;
+import com.xpress.onboarding.api.services.IAccountService;
+
 
 @RestController
 @RequestMapping("/onboarding")
@@ -28,7 +29,7 @@ public class AccountsController {
 	private static final Logger logger = LoggerFactory.getLogger(AccountsController.class);
 
 	@Autowired
-	AccountService accountService;
+	IAccountService accountService;
 
 	/*
 	 * @GetMapping("/hello") public String hello() { return "Hi"; }
@@ -50,7 +51,7 @@ public class AccountsController {
 
 	@PostMapping(value = "/accounts")
 	public ResponseEntity<String> addAccounts(@RequestBody final Accounts accounts) {
-		Accounts savedAccounts = accountService.addAccoounts(accounts);
+		Accounts savedAccounts = accountService.addAccounts(accounts);
 		return ResponseEntity.ok().body("New Account has been saved with ID: " + savedAccounts.getAccountId());
 	}
 

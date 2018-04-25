@@ -1,7 +1,6 @@
 package com.xpress.onboarding.api.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,7 +31,6 @@ public class LegalAgreements implements Serializable {
 
 	public LegalAgreements() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getAgreementId() {

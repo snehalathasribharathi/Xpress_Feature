@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.xpress.onboarding.api.domain.Contacts;
 import com.xpress.onboarding.api.exceptions.CustomErrorType;
-import com.xpress.onboarding.api.services.ContactService;
+import com.xpress.onboarding.api.services.IContactService;
 
 @RestController
 @RequestMapping("/onboarding")
@@ -28,7 +28,7 @@ public class ContactsController {
 	private static final Logger logger = LoggerFactory.getLogger(ContactsController.class);
 
 	@Autowired
-	ContactService contactService;
+	IContactService contactService;
 
 	/*@GetMapping("/hello")
 	public String hello() {

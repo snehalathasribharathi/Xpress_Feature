@@ -2,7 +2,6 @@ package com.xpress.onboarding.api.domain;
 
 import java.io.Serializable;
 
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +28,6 @@ public class Accounts implements Serializable {
 
 	public Accounts() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getAccountId() {

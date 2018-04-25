@@ -33,11 +33,10 @@ public class Contacts implements Serializable {
 	@Column
 	private String emailId;
 	@Column
-	private int contactNo;
+	private Long contactNo;
 
 	public Contacts() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getContactId() {
@@ -96,11 +95,11 @@ public class Contacts implements Serializable {
 		this.emailId = emailId;
 	}
 
-	public int getContactNo() {
+	public Long getContactNo() {
 		return contactNo;
 	}
 
-	public void setContactNo(int contactNo) {
+	public void setContactNo(Long contactNo) {
 		this.contactNo = contactNo;
 	}
 

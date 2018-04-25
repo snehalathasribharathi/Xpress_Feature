@@ -15,12 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.xpress.onboarding.api.domain.Company;
 import com.xpress.onboarding.api.exceptions.CustomErrorType;
-import com.xpress.onboarding.api.services.CompanyService;
+import com.xpress.onboarding.api.services.ICompanyService;
 
 @RestController
 @RequestMapping("/onboarding")
@@ -29,7 +28,7 @@ public class CompanyController {
 	private static final Logger logger = LoggerFactory.getLogger(CompanyController.class);
 
 	@Autowired
-	CompanyService companyService;
+	ICompanyService companyService;
 
 	@GetMapping("/hello")
 	public String hello() {
@@ -59,7 +58,7 @@ public class CompanyController {
 
 	@PutMapping(value = "/companies/{id}")
 	public ResponseEntity<?> updateCompany(@RequestBody final Company company, @PathVariable("id") Integer companyId) {
-		Company updatedCompany=companyService.updateCompany(companyId, company);
+		companyService.updateCompany(companyId, company);
 		/*if(updatedCompany ==null) {
 			logger.error("Unable to update. User with id {} not found.", companyId);
 			CustomErrorType error=new CustomErrorType("Unable to upate. User with id " + id + " not found.") 

@@ -19,16 +19,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.xpress.onboarding.api.domain.LegalAgreements;
 import com.xpress.onboarding.api.exceptions.CustomErrorType;
-import com.xpress.onboarding.api.services.LegalAgreementService;
+import com.xpress.onboarding.api.services.ILegalAgreementService;
 
 @RestController
 @RequestMapping("/onboarding")
 public class LegalAgreementsController {
 
-	private static final Logger logger = LoggerFactory.getLogger(LegalAgreementService.class);
+	private static final Logger logger = LoggerFactory.getLogger(LegalAgreementsController.class);
 
 	@Autowired
-	LegalAgreementService legalAgreementService;
+	ILegalAgreementService legalAgreementService;
 
 	/*@GetMapping("/hello")
 	public String hello() {
